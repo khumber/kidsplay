@@ -57,8 +57,6 @@ else{
 }
 }
  
-
-
 // include page header HTML
 include_once "layout_head.php";
  

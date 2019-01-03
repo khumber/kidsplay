@@ -9,7 +9,7 @@ include_once "login_checker.php";
 $page_title="Admin Index";
  
 // include page header HTML
-include 'layout_head.php';
+include "layout_head.php";
  
     echo "<div class='col-md-12'>";
  
