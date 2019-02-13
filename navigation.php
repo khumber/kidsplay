@@ -25,17 +25,8 @@
             
     <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && $_SESSION['access_level']=='Customer'){
     ?>    
-        <ul class="nav navbar-nav">
-                <li <?php echo $page_title=="Index" ? "class='active'" : ""; ?>>
-                    <a href="<?php echo $home_url;?>employeedashboard.php">Employee</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li <?php echo $page_title=="Index" ? "class='active'" : ""; ?>>
-                    <a href="<?php echo $home_url;?>login.php">Reporting</a>
-                </li>
-            </ul>
  
+
     <?php
     }
             // check if users / customer was logged in
@@ -52,9 +43,7 @@
                 <ul class="dropdown-menu" role="menu">              
                 <li><a href="<?php echo $home_url; ?>logout.php">Setting <span class="glyphicon glyphicon-cog"></span> </a></li>
                 <li><a href="<?php echo $home_url; ?>logout.php">Logout</a></li>             
-                <li <?php echo $page_title=="Register" ? "class='active'" : ""; ?>>
-                <a href="<?php echo $home_url; ?>register.php">
-                <span class="glyphicon glyphicon-check"></span> Setup User
+
                 </a>
                 </li>
             </ul>

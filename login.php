@@ -33,13 +33,12 @@ $email_exists = $user->emailExists();
 // validate login
 if ($email_exists && password_verify($_POST['password'], $user->password) && $user->status==1){
  
-
     // if it is, set the session value to true
     $_SESSION['logged_in'] = true;
     $_SESSION['user_id'] = $user->id;
     $_SESSION['access_level'] = $user->access_level;
     $_SESSION['firstname'] = htmlspecialchars($user->firstname, ENT_QUOTES, 'UTF-8') ;
-    $_SESSION['lastname'] = $user->lastname;
+    $_SESSION['lastname'] = htmlspecialchars($user->lastname, ENT_QUOTES, 'UTF-8') ;
  
     // if access level is 'Admin', redirect to admin section
     if($user->access_level=='Admin'){

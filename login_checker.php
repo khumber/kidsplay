@@ -23,6 +23,7 @@ else if(isset($page_title) && ($page_title=="Login" || $page_title=="Sign Up")){
 }
  
 else{
+   
     // no problem, stay on current page
 }
 ?>

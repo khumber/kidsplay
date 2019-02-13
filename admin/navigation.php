@@ -1,53 +1,39 @@
 <!-- navbar -->
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container-fluid">
- 
-        <div class="navbar-header">
-            <!-- to enable navigation dropdown when viewed in mobile device -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
- 
-            <!-- Change "Site Admin" to your site name -->
-            <a class="navbar-brand" href="<?php echo $home_url; ?>admin/index.php">Admin</a>
-        </div>
- 
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
- 
- 
-                <!-- highlight for order related pages -->
-                <li <?php echo $page_title=="Admin Index" ? "class='active'" : ""; ?>>
-                    <a href="<?php echo $home_url; ?>admin/index.php">Home</a>
-                </li>
- 
-                <!-- highlight for user related pages -->
-                <li <?php
-                        echo $page_title=="Users" ? "class='active'" : ""; ?> >
-                    <a href="<?php echo $home_url; ?>admin/read_users.php">Users</a>
-                </li>
-            </ul>
- 
-            <!-- options in the upper right corner of the page -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        &nbsp;&nbsp;<?php echo $_SESSION['firstname']; ?>
-                        &nbsp;&nbsp;<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <!-- log out user -->
-                        <li><a href="<?php echo $home_url; ?>logout.php">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
- 
-        </div><!--/.nav-collapse -->
- 
-    </div>
-</div>
-<!-- /navbar -->
+
+<header class="navbar navbar-expand-md navbar-dark bg-dark">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<a class="navbar-brand" href="<?php echo $home_url; ?>admin/index.php">KidsPlay</a>
+ <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="<?php echo $home_url; ?>admin/index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  href="<?php echo $home_url; ?>admin/equipment_display.php">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo $home_url; ?>admin/read_users.php">User</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo $home_url; ?>admin/employeedashboard.php">Employee</a>
+      </li>
+
+      </ul>
+      <ul class ="navbar-nav mr-auto" style ="float:right">
+      <li class="pull-right">
+      <a class="nav-link" > <?php echo ' '. $_SESSION['firstname'].' '.$_SESSION['lastname']; ?></a>
+      </li>
+      <li class="pull-right">    
+        <a class="nav-link" href="<?php echo $home_url; ?>logout.php"> | Logout</a>
+      </li>
+</ul>
+    
+  </div>
+ </header>
+
+
+
+

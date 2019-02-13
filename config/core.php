@@ -1,12 +1,10 @@
 <?php
 // show error reporting
-error_reporting(E_ALL);
- 
+error_reporting(E_ALL); 
 // start php session
-session_start();
- 
+session_start(); 
 // set your default time-zone
-date_default_timezone_set('Asia/Manila');
+date_default_timezone_set('US/Eastern');
  
 // home page url
 $home_url="http://localhost/kidsplay/";

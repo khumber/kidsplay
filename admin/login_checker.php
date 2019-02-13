@@ -12,6 +12,7 @@ else if($_SESSION['access_level']!="Admin"){
 }
  
 else{
+   
     // no problem, stay on current page
 }
 ?>

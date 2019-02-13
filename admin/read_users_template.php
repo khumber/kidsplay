@@ -2,7 +2,7 @@
 // display the table if the number of users retrieved was greater than zero
 if($num>0){
  
-    echo "<table class='table table-hover table-responsive table-bordered'>";
+    echo "<table class='table table-hover'>";
  
     // table headers
     echo "<tr>";
@@ -16,8 +16,7 @@ if($num>0){
     // loop through the user records
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
- 
-        // display user details
+         // display user details
         echo "<tr>";
             echo "<td>{$firstname}</td>";
             echo "<td>{$lastname}</td>";
@@ -30,8 +29,7 @@ if($num>0){
     echo "</table>";
  
     $page_url="read_users.php?";
-    $total_rows = $user->countAll();
- 
+    $total_rows = $user->countAll(); 
     // actual paging buttons
     include_once 'paging.php';
 }

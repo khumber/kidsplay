@@ -196,7 +196,7 @@ function readAll($from_record_num, $records_per_page){
 }
 // used for paging users
 public function countAll(){
- 
+   ;
     // query to select all user records
     $query = "SELECT id FROM " . $this->table_name . "";
  
@@ -208,7 +208,7 @@ public function countAll(){
  
     // get number of rows
     $num = $stmt->rowCount();
- 
+    $_SESSION ['count_all_users'] =$num;
     // return row count
     return $num;
 }
