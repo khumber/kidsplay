@@ -17,35 +17,40 @@ $db = $database->getConnection();
 $util = new Utils($db);
 $util->countTableTotal();
 $stmt =$util->quickDisplayTotals();
+
+
+
+
 ?>
+<?php include_once "getjsondata.php";?>
+
+
+
+
 <span class="mdl-layout-title"><?php echo $page_title ?></span>
 <div class="jumbotron jumbotron-fluid">
-<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Computers</div>
-  <div class="card-body">
-    <h5 class="card-title">Desktops/Laptops</h5>
-    <p class="card-text">GBS Enterprises Computer inventory</p>
-  </div>
-</div>
-<div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-  <div class="card-header">HeadSets</div>
-  <div class="card-body">
-    <h5 class="card-title">HeadSets/Y-Cords</h5>
-    <p class="card-text">GBS Enterprises headsets inventory</p>
-  </div>
-</div>
-<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-  <div class="card-header">Phones</div>
-  <div class="card-body">
-    <h5 class="card-title">Desk Phones/Cells Phones</h5>
-    <p class="card-text">GBS Enterprises telephone inventory</p>
-  </div>
-</div>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-</div>
+<h2>GBS Enterprises Equipment Management </h2>      
+    <p>Keeping tabs on the company's equipment life cycle</p>
+</div> <!-- end  jumbotron -->
 
+<div class="jumbotron jumbotron-fluid">
+<div class ="row">
+<?php
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+extract($row);
+echo' <div class ="col-lg-3 col-md-4">
+<div class="'.$row['button_type'].'" style="max-width: 25rem;">
+  <div class="card-header">'.$row['title'].'<span class="badge badge-light">'.$row['equip_quantity'].'</span></div>
+  <div class="card-body">
+    <p class="card-text">'.$row['description'] .'</p>
+  </div>
+</div>
+</div>';
+}
+?>
+</div> <!-- End row -->
+</div> <!-- end  jumbotron -->
 <?php
  // include page footer HTML
 include_once 'layout_foot.php';

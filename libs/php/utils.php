@@ -56,11 +56,5 @@ private $conn;
     $num =$stmt->rowCount();
     return $stmt;
    }
-
-
-
- 
 }
-
-
 ?>
